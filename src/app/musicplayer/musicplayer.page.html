@@ -1,0 +1,51 @@
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="musiclist" style="color:white" (click)="returnToPrev()"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content>
+  <div class="ion-text-center">
+    <img id="album-image" style="height:250px;width: 250px;border-radius: 5px;border:none;" src="{{album_image}}">
+  </div>
+
+  <div class="padding_Top">
+    <div class="fixedContent">
+      <ion-text style="color:white" id="album-titles" style="font-size:18px;margin-top:-20px;margin-bottom: 10px;"></ion-text>
+      <ion-label  color="light" style="color:white" class="pUser microsoft marquee " id="album-author"></ion-label>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-range min="0" max="{{duration}}"  [(ngModel)]="position" style="color:white">
+  </ion-range>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" class="ion-text-center vertical-align-content"><ion-label id="endTime" id="startTime" style="color:white;  margin: 0;position: relative;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);"></ion-label></ion-col>
+      <ion-col size="6">
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button style="margin: auto;" primary large (click)="prev()" fill="clear" >
+              <ion-icon name="play-skip-back-outline" style="color:white"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button style="margin: auto;" primary large (click)="pause()" fill="clear">
+              <ion-icon fill="clear" style="color:white" id="pause-button-2" name="pause-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button style="margin: auto;" primary large (click)="next()" fill="clear">
+              <ion-icon fill="clear" style="color:white" name="play-skip-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center vertical-align-content"><ion-label id="endTime" class="ion-text-end" style="color:white;margin-left:25px;position: relative;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);"></ion-label></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+

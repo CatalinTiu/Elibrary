@@ -1,0 +1,67 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+  <ion-tabs>
+      <div id="player-footer" style="display:none;">
+        <ion-grid style="padding:0px">
+          <ion-row>
+            <ion-col size="4" (click)="moveToPlayer()">
+              <div>
+                <h3 style="font-size:10px;display:table;color:white" id="track_title"></h3>
+              </div>
+            </ion-col>
+            <ion-col size="4" (click)="moveToPlayer()"></ion-col>
+            <ion-col size="4" >
+              <ion-row style="margin-top:auto !important" >
+                <ion-col size="4" >
+                  <ion-button primary large (click)="prevAudio()" fill="clear" >
+                    <ion-icon name="play-skip-back-outline" style="margin: 0 auto;color:white" ></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col size="4" >
+                  <ion-button primary large (click)="pause()" fill="clear">
+                    <ion-icon style="margin: 0 auto;color:white" fill="clear" id="pause-button" name="pause-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col size="4" >
+                  <ion-button primary large (click)="nextAudio()"  fill="clear">
+                    <ion-icon style="margin: 0 auto;color:white" fill="clear" name="play-skip-forward-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    <div id="tab-barz" >
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="authors">
+          <ion-icon name="people-outline"></ion-icon>
+          <ion-label>Authors</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="musiclist">
+          <ion-icon name="book-outline"></ion-icon>
+          <ion-label>Albums</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="bookmarks" *ngIf="!service.getGuest()">
+          <ion-icon name="bookmarks-outline"></ion-icon>
+          <ion-label>Bookmarks</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="qr-scanner" (click)="scan()">
+          <ion-icon name="qr-code-outline"></ion-icon>
+          <ion-label>Scan</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="profile">
+          <ion-icon name="person-circle"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-tab-button>
+        
+
+      </ion-tab-bar>
+    </div>
+  </ion-tabs>
+</ion-app>

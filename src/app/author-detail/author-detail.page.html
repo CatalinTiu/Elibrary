@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-toolbar style="position: absolute;left:0;top:0;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="musiclist" (click)="returnToPrev()">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+  <ion-grid id="author-image" style='height: 40%; background-repeat: no-repeat;background-position: center;'>
+    <ion-row style="display: inline!;height: 100%;" text-center >
+      <div style="display: flex;height: 100%;">
+        <ion-col size="12" class="ion-text-center" style="bottom:0;margin:0; width: 100%;align-self: flex-end;">
+            <h3 style="color:white;margin-bottom: 0px!important;line-height:5px;" id="author-title"></h3><br style="margin:0"/>
+            <h5 id="author-details" style="margin-bottom:5px;margin-top:0px;font-size:10px"></h5>
+        </ion-col>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col  size="6" sizeLg="3" color="light" *ngFor="let item of items">
+        <div style="height:250px;display: block;text-align: center;width: 100%;" (click)="Album(item.id)">
+            <div style='margin-left: auto;margin-right: auto;'><img style="border-radius: 5px;margin-bottom:15px;height:150px;width:150px;" src="{{item.url}}"></div>
+            <span>
+              <div style="margin-bottom: 3px;"><ion-label style="font-size: 15px;">{{item.Title}}</ion-label></div>
+            </span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+    
+
