@@ -37,27 +37,27 @@
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="authors">
           <ion-icon name="people-outline"></ion-icon>
-          <ion-label>Authors</ion-label>
+          <ion-label>Autori</ion-label>
         </ion-tab-button>
     
         <ion-tab-button tab="musiclist">
           <ion-icon name="book-outline"></ion-icon>
-          <ion-label>Albums</ion-label>
+          <ion-label>Opere</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="bookmarks" *ngIf="!service.getGuest()">
           <ion-icon name="bookmarks-outline"></ion-icon>
-          <ion-label>Bookmarks</ion-label>
+          <ion-label>Favorite</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="qr-scanner" (click)="scan()">
           <ion-icon name="qr-code-outline"></ion-icon>
-          <ion-label>Scan</ion-label>
+          <ion-label>Scanner</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="profile">
           <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Profile</ion-label>
+          <ion-label>Profil</ion-label>
         </ion-tab-button>
         
 
